@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>Save the ant</title>
+		<script type="text/javascript" src='js/SceneObject.js'></script>
+		<script type="text/javascript" src='js/Sound.js'></script>
+		<script type="text/javascript" src='js/Camera.js'></script>
+		<script type="text/javascript" src='js/main.js'></script>
+		<link rel="stylesheet" href="css/style.css"/>
+		<script>
+			menuSound = new SoundTrack(); menuSound.init('sound/menu.mp3');
+			var verify = setInterval( function(){ if(menuSound.isLoad()){ clearInterval(verify); initGame(); } }, 100 )
+			
+			function initGame(){
+				document.getElementById("load").style.display = 'none';
+				document.getElementById("menu").style.display = "block";
+				menuSound.playSound(true);
+			}
+			
+			function credits(){
+				document.getElementById("menu").style.display = 'none';
+				document.getElementById("cred").style.display = 'block';				
+			}
+			
+			function htp(){
+				document.getElementById("menu").style.display = 'none';
+				document.getElementById("htp").style.display = 'block';				
+			}
+			
+			function menu(){
+				document.getElementById("menu").style.display = 'block';
+				document.getElementById("cred").style.display = 'none';	
+				document.getElementById("htp").style.display = 'none';						
+			}
+		</script>
+	</head>
+	<body>
+		<div id="menu" style="display:none">
+			<button onclick="htp();" > <b>How to Play</b> </button>
+			<button onclick="credits();" > <b>About</b> </button>
+			<button onclick="main();" > <b>New Game</b> </button>
+		</div>
+		<div id="cred" style="display:none">
+			<button class="backButton" onclick="menu();" > <img src="img/back.png"/> </button>
+		</div>
+		<div id="htp" style="display:none">
+			<button class="backButton" onclick="menu();" > <img src="img/back.png"/> </button>
+		</div>
+		<div id="load" style="width:600; height: 800">
+			<center> <img src= "img/load.gif" style="width:10%; height:10%; margin-top:300px;"/> </center>
+		</div>
+	</body>
+</html>
