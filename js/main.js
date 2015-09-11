@@ -209,12 +209,12 @@ function processa(){
 			worldList[i].position = [worldList[i].cam.positionX, 2401];
 		}
 		if (worldList[i].name == "Ant" && !worldList[i].canMove ){
-			credits();
+			creditss();
 		}
 	}
 }
 
-function credits(){
+function creditss(){
 	ctx.fillStyle="#000000";
 	ctx.fillRect(0,0,cv.width,cv.height);
 	cam.positionX = 3200; cam.positionY = 0;
